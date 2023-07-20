@@ -7,7 +7,7 @@ double raz(double[] array)
 {
     double min = array[0];
     double max = array[0];
-    int i = 1;
+    int i = 0;
     while (i < array.Length)
     {
         if (max < array[i])
