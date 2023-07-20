@@ -2,14 +2,24 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-void ToDegree(int A, int B)
+bool Validate(int numberB)
+{
+    if(numberB < 0)
+    {
+        Console.WriteLine("Показатель степени не должен быть меньше нуля");
+        return false;
+    }
+    return true;
+}
+
+int ToDegree(int numberA, int numberB)
 {
     int result = 1;
-    for (int i = 1; i <= B; i++)
+    for (int i = 1; i <= numberB; i++)
     {
-        result = result * A;
+        result = result * numberA;
     }
-    Console.WriteLine(A + " в степени " + B + " = " + result);
+    return result;
 }
 
 int ReadInt(string msg)
@@ -21,3 +31,8 @@ int ReadInt(string msg)
 int numberA = ReadInt("Введите число A: ");
 int numberB = ReadInt("Введите степень B: ");
 ToDegree(numberA, numberB);
+
+if (Validate(numberB))
+{
+    Console.WriteLine($"Число {numberA} в степени {numberB} равно {ToDegree(numberA, numberB)}");
+}
